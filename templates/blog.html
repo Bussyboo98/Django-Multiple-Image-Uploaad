@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-2">
+    {% for b in blog %}
+    <div class="col mb-4">
+      <div class="card">
+        <div class="view overlay">
+          <img class="card-img-top" src="{{b.image.url}}" alt="">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{b.title}}</h4>
+          <p class="card-text">{{b.description}}</p>
+          <a href="{%url 'detail' b.id %}" class="btn btn-primary btn-md">Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
